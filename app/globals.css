@@ -31,4 +31,19 @@ body {
   .hero-glow {
     background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
   }
+
+  /* Cinematic section fade-in from bottom */
+  .section-fade-mask {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+}
+
+/* Smooth section depth separators */
+section + section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.12) 30%, rgba(34, 211, 238, 0.10) 70%, transparent);
+  pointer-events: none;
 }

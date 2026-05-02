@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import { fadeUp, blurIn } from "@/lib/animations";
 
 const faqs = [
   {
@@ -37,23 +40,29 @@ export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 relative">
+    <section id="faq" className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#080810] to-transparent pointer-events-none" />
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+        <AnimatedSection className="text-center mb-16">
+          <motion.h2
+            variants={blurIn}
+            className="text-4xl sm:text-5xl font-black tracking-tight mb-4"
+          >
             Frequently Asked{" "}
             <span className="gradient-text">Questions</span>
-          </h2>
-          <p className="text-slate-400">
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-slate-400">
             Everything you need to know before your free audit.
-          </p>
-        </div>
+          </motion.p>
+        </AnimatedSection>
 
-        <div className="space-y-3">
+        <AnimatedSection className="space-y-3">
           {faqs.map((faq, i) => (
-            <div
+            <motion.div
               key={i}
-              className={`rounded-xl border overflow-hidden transition-all duration-300 ${
+              variants={fadeUp}
+              className={`rounded-xl border overflow-hidden transition-colors duration-300 ${
                 open === i
                   ? "bg-[#0f0f1a] border-indigo-500/30"
                   : "bg-[#0a0a12] border-white/5 hover:border-white/10"
@@ -70,22 +79,30 @@ export default function FAQSection() {
                 >
                   {faq.q}
                 </span>
-                <span
-                  className={`text-xl flex-shrink-0 transition-transform duration-300 ${
-                    open === i ? "rotate-45 text-indigo-400" : "text-slate-600"
-                  }`}
+                <motion.span
+                  animate={{ rotate: open === i ? 45 : 0 }}
+                  transition={{ duration: 0.25 }}
+                  className={`text-xl flex-shrink-0 ${open === i ? "text-indigo-400" : "text-slate-600"}`}
                 >
                   +
-                </span>
+                </motion.span>
               </button>
-              {open === i && (
-                <div className="px-5 pb-5">
-                  <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              )}
-            </div>
+              <AnimatePresence initial={false}>
+                {open === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="px-5 pb-5 text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -1,3 +1,10 @@
+"use client";
+
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import TiltCard from "@/components/TiltCard";
+import { fadeUp, blurIn, fadeIn, scaleIn } from "@/lib/animations";
+
 const services = [
   {
     tier: "Basic",
@@ -90,83 +97,96 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#080810] to-transparent pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
+        <AnimatedSection className="text-center mb-16">
+          <motion.div
+            variants={fadeIn}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6"
+          >
             💼 Service Tiers
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+          </motion.div>
+          <motion.h2
+            variants={blurIn}
+            className="text-4xl sm:text-5xl font-black tracking-tight mb-4"
+          >
             Choose Your
             <span className="gradient-text"> Growth Level</span>
-          </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-slate-400 text-lg max-w-2xl mx-auto">
             Every tier is built around one goal: generating more revenue for
             your business. We don&apos;t build websites — we build revenue systems.
-          </p>
-        </div>
+          </motion.p>
+        </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service) => (
-            <div
-              key={service.tier}
-              className={`relative p-6 rounded-2xl bg-gradient-to-b ${service.colorClass} border ${service.borderClass} flex flex-col hover:scale-[1.02] transition-transform duration-300 ${
-                service.highlighted
-                  ? "ring-2 ring-indigo-500/40 shadow-2xl shadow-indigo-500/10"
-                  : ""
-              }`}
-            >
-              {service.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white text-xs font-bold shadow-lg whitespace-nowrap">
-                  Most Popular
+            <motion.div key={service.tier} variants={scaleIn}>
+              <TiltCard intensity={8} className="h-full">
+                <div
+                  className={`relative p-6 rounded-2xl bg-gradient-to-b ${service.colorClass} border ${service.borderClass} flex flex-col h-full ${
+                    service.highlighted
+                      ? "ring-2 ring-indigo-500/40 shadow-2xl shadow-indigo-500/10"
+                      : ""
+                  }`}
+                >
+                  {service.highlighted && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white text-xs font-bold shadow-lg whitespace-nowrap">
+                      Most Popular
+                    </div>
+                  )}
+
+                  <div className="text-3xl mb-3">{service.icon}</div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h3 className="text-xl font-black">{service.tier}</h3>
+                    <span className="px-2 py-0.5 rounded-full bg-white/5 text-slate-400 text-xs">
+                      {service.badge}
+                    </span>
+                  </div>
+                  <p className="text-slate-400 text-sm mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="mb-4">
+                    <span className="text-2xl font-black text-white">{service.price}</span>
+                    <span className="text-slate-500 text-sm ml-1">one-time</span>
+                    <div className="text-indigo-400 text-sm font-semibold mt-0.5">
+                      {service.retainer} retainer
+                    </div>
+                  </div>
+
+                  <ul className="flex-1 space-y-2 mb-6">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
+                        <span className="text-indigo-400 mt-0.5 flex-shrink-0">✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mb-4 px-3 py-2 rounded-lg bg-white/5 text-slate-500 text-xs">
+                    Stack: {service.stack}
+                  </div>
+
+                  <motion.a
+                    href="#audit"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className={`block text-center px-4 py-3 rounded-xl font-bold text-sm transition-all ${
+                      service.highlighted
+                        ? "gradient-bg text-white shadow-lg shadow-indigo-500/20"
+                        : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {service.cta} →
+                  </motion.a>
                 </div>
-              )}
-
-              <div className="text-3xl mb-3">{service.icon}</div>
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-xl font-black">{service.tier}</h3>
-                <span className="px-2 py-0.5 rounded-full bg-white/5 text-slate-400 text-xs">
-                  {service.badge}
-                </span>
-              </div>
-              <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                {service.description}
-              </p>
-
-              <div className="mb-4">
-                <span className="text-2xl font-black text-white">{service.price}</span>
-                <span className="text-slate-500 text-sm ml-1">one-time</span>
-                <div className="text-indigo-400 text-sm font-semibold mt-0.5">
-                  {service.retainer} retainer
-                </div>
-              </div>
-
-              <ul className="flex-1 space-y-2 mb-6">
-                {service.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
-                    <span className="text-indigo-400 mt-0.5 flex-shrink-0">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mb-4 px-3 py-2 rounded-lg bg-white/5 text-slate-500 text-xs">
-                Stack: {service.stack}
-              </div>
-
-              <a
-                href="#audit"
-                className={`block text-center px-4 py-3 rounded-xl font-bold text-sm transition-all ${
-                  service.highlighted
-                    ? "gradient-bg text-white shadow-lg shadow-indigo-500/20"
-                    : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                }`}
-              >
-                {service.cta} →
-              </a>
-            </div>
+              </TiltCard>
+            </motion.div>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
