@@ -8,10 +8,12 @@ import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import WelcomeVoice from "@/components/WelcomeVoice";
 
 export default function Home() {
   return (
     <main>
+      <WelcomeVoice />
       <Navbar />
       <Hero />
       <ProblemSection />
