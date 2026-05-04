@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import MagneticButton from "@/components/MagneticButton";
 
 const HeroScene = dynamic(() => import("@/components/HeroScene"), {
   ssr: false,
@@ -56,22 +57,18 @@ export default function Hero() {
             </p>
 
             <div className="animate-fade-up delay-500 flex flex-col sm:flex-row gap-4 mb-12">
-              <motion.a
+              <MagneticButton
                 href="#audit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 rounded-xl gradient-bg text-white font-bold text-base shadow-xl shadow-indigo-500/25 animate-pulse-glow text-center"
+                className="px-8 py-4 rounded-xl gradient-bg text-white font-bold text-base shadow-xl shadow-indigo-500/25 animate-pulse-glow text-center block"
               >
                 Get Your Free Business Audit →
-              </motion.a>
-              <motion.a
+              </MagneticButton>
+              <MagneticButton
                 href="#services"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base hover:bg-white/10 transition-all duration-200 text-center"
+                className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-base hover:bg-white/10 transition-all duration-200 text-center block"
               >
                 See Our Services
-              </motion.a>
+              </MagneticButton>
             </div>
 
             <div className="grid grid-cols-3 gap-6">
