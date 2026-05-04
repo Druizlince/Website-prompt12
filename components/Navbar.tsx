@@ -17,8 +17,9 @@ export default function Navbar() {
   const navLinks = [
     { label: "Services", href: "#services" },
     { label: "AI Tier", href: "#ai-tier" },
-    { label: "Pricing", href: "#pricing" },
     { label: "How It Works", href: "#how-it-works" },
+    { label: "About", href: "#about" },
+    { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
   ];
 

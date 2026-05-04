@@ -4,6 +4,7 @@ import ProblemSection from "@/components/ProblemSection";
 import ServicesSection from "@/components/ServicesSection";
 import AITierSection from "@/components/AITierSection";
 import HowItWorks from "@/components/HowItWorks";
+import AboutSection from "@/components/AboutSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -20,6 +21,7 @@ export default function Home() {
       <ServicesSection />
       <AITierSection />
       <HowItWorks />
+      <AboutSection />
       <PricingSection />
       <FAQSection />
       <CTASection />
