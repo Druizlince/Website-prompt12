@@ -87,7 +87,7 @@ export default function Hero() {
 
           {/* Right — 3D Scene */}
           <div className="animate-scale-in delay-300 hidden lg:flex items-center justify-center h-[600px] xl:h-[700px] relative">
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl animate-pulse" />
               <div className="absolute w-60 h-60 bg-cyan-500/15 rounded-full blur-2xl" />
             </div>
