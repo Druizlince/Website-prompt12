@@ -33,7 +33,7 @@ export default function Footer() {
                 alt="ANTIC AGENCY"
                 width={140}
                 height={56}
-                className="h-14 w-auto object-contain"
+                className="h-14 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6 max-w-xs">
