@@ -32,14 +32,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center animate-fade-in">
             <Image
               src="/logo.png"
               alt="ANTIC AGENCY"
-              width={160}
-              height={64}
-              className="h-14 w-auto object-contain brightness-0 invert hover:opacity-80 transition-opacity duration-200"
+              width={220}
+              height={88}
+              className="h-20 w-auto object-contain brightness-0 invert hover:opacity-80 transition-opacity duration-200"
               priority
             />
           </Link>
