@@ -42,11 +42,11 @@ export default function Hero() {
             </div>
 
             <h1 className="animate-blur-in delay-200 text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-              Your Business Is
+              Web Design &amp; AI Automation
               <br />
-              <span className="shimmer-text">Bleeding Revenue</span>
+              <span className="shimmer-text">That Grows Your Business</span>
               <br />
-              Without Knowing It
+              <span className="text-slate-400 text-3xl sm:text-4xl xl:text-5xl font-bold">Bergen County, NJ &amp; Beyond</span>
             </h1>
 
             <p className="animate-fade-up delay-400 text-lg sm:text-xl text-slate-400 leading-relaxed mb-10 max-w-xl">
