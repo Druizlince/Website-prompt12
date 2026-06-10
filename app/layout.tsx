@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "ANTIC AGENCY",
     images: [
       {
-        url: "https://anticagency.vercel.app/og-image.png",
+        url: "https://anticagency.vercel.app/opengraph-image",
         width: 1200,
         height: 630,
         alt: "ANTIC AGENCY — Web Design & AI Automation",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "ANTIC AGENCY | Web Design & AI Automation for Small Businesses",
     description:
       "High-converting websites + AI automation systems for small businesses. Serving Bergen County, NJ.",
-    images: ["https://anticagency.vercel.app/og-image.png"],
+    images: ["https://anticagency.vercel.app/opengraph-image"],
   },
 };
 
