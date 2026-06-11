@@ -18,7 +18,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-24 md:pt-28">
       {/* Parallax background layers */}
       <motion.div className="absolute inset-0 hero-glow" style={{ y: bgY }} />
       <motion.div
@@ -31,7 +31,7 @@ export default function Hero() {
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         style={{ y: textY, opacity }}
       >
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-4rem)]">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-7rem)]">
 
           {/* Left — Text with CSS stagger animations */}
           <div className="flex flex-col justify-center py-16 lg:py-0">

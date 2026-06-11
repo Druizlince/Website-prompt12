@@ -37,9 +37,9 @@ export default function Navbar() {
             <Image
               src="/logo-v2.png"
               alt="ANTIC AGENCY"
-              width={300}
-              height={120}
-              className="h-24 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
+              width={196}
+              height={100}
+              className="h-20 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
               priority
             />
           </Link>
