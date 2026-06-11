@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Services: [
     { label: "Basic Website", href: "#services" },
@@ -28,13 +26,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <Image
-                src="/logo.png"
-                alt="ANTIC AGENCY"
-                width={140}
-                height={56}
-                className="h-14 w-auto object-contain"
-              />
+              <span className="text-xl font-black tracking-widest bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">ANTIC</span>
+              <span className="text-xl font-black tracking-widest text-white ml-2">AGENCY</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6 max-w-xs">
               AI-powered digital transformation for small and medium businesses.
