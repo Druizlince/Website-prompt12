@@ -39,7 +39,7 @@ export default function Navbar() {
               alt="ANTIC AGENCY"
               width={220}
               height={88}
-              className="h-20 w-auto object-contain brightness-0 invert hover:opacity-80 transition-opacity duration-200"
+              className="h-20 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
               priority
             />
           </Link>
