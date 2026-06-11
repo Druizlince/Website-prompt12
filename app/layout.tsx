@@ -13,18 +13,18 @@ export const metadata: Metadata = {
   description:
     "We build high-converting websites and AI automation systems for small businesses in Bergen County, NJ and beyond. More leads, more revenue, less work. Get your free audit today.",
   alternates: {
-    canonical: "https://anticagency.vercel.app",
+    canonical: "https://anticagency.it.com",
   },
   openGraph: {
     type: "website",
-    url: "https://anticagency.vercel.app",
+    url: "https://anticagency.it.com",
     title: "ANTIC AGENCY | Web Design & AI Automation for Small Businesses",
     description:
       "High-converting websites + AI automation systems for small businesses. Serving Bergen County, NJ. Get a free business audit.",
     siteName: "ANTIC AGENCY",
     images: [
       {
-        url: "https://anticagency.vercel.app/opengraph-image",
+        url: "https://anticagency.it.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "ANTIC AGENCY — Web Design & AI Automation",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "ANTIC AGENCY | Web Design & AI Automation for Small Businesses",
     description:
       "High-converting websites + AI automation systems for small businesses. Serving Bergen County, NJ.",
-    images: ["https://anticagency.vercel.app/opengraph-image"],
+    images: ["https://anticagency.it.com/opengraph-image"],
   },
 };
 
@@ -46,7 +46,7 @@ const localBusinessSchema = {
   name: "ANTIC AGENCY",
   description:
     "Web design and AI automation agency helping small businesses grow with high-converting websites, SEO, and intelligent automation systems.",
-  url: "https://anticagency.vercel.app",
+  url: "https://anticagency.it.com",
   areaServed: {
     "@type": "AdministrativeArea",
     name: "Bergen County, NJ",
