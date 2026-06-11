@@ -31,9 +31,9 @@ export default function Footer() {
               <Image
                 src="/logo-v2.png"
                 alt="ANTIC AGENCY"
-                width={140}
-                height={56}
-                className="h-14 w-auto object-contain"
+                width={157}
+                height={80}
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6 max-w-xs">
