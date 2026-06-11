@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-4">
               <Image
-                src="/logo.png"
+                src="/logo-v2.png"
                 alt="ANTIC AGENCY"
                 width={140}
                 height={56}

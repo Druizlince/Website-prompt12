@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center animate-fade-in">
             <Image
-              src="/logo.png"
+              src="/logo-v2.png"
               alt="ANTIC AGENCY"
               width={300}
               height={120}
